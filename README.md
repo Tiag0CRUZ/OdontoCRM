@@ -1,18 +1,43 @@
-# Salesforce DX Project: Next Steps
+# 🦷 OdontoCRM
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Sistema de gestão de clínica odontológica desenvolvido na plataforma Salesforce como projeto de portfólio para demonstração de conhecimentos em desenvolvimento Salesforce.
 
-## How Do You Plan to Deploy Your Changes?
+## 🚀 Sobre o projeto
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+O OdontoCRM foi desenvolvido para simular a gestão de uma de uma agenda de clínicas odontológicas, permitindo o gerenciamento de pacientes, dentistas e consultas.
 
-## Configure Your Salesforce DX Project
+O projeto utiliza recursos da plataforma Salesforce combinando desenvolvimento declarativo e programático.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+#Funcionalidades
 
-## Read All About It
+- Cadastro e gerenciamento de pacientes
+- Cadastro e gerenciamento de dentistas
+- Cadastro e gerenciamento de consultas
+- Relacionamento entre Pacientes, Dentistas e Consultas
+- Controle de data e horário das consultas
+- Validação de conflitos de horário
+- Agenda personalizada
+- Interface desenvolvida com Lightning Web Components
+- Controller Apex para consulta dos dados
+- Testes automatizados em Apex
+- Aplicativo personalizado utilizando Lightning App Builder
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+#Arquitetura
+
+
+                    OdontoCRM
+                        │
+              ┌─────────┴─────────┐
+              │                   │
+          Lightning App      Lightning Page
+              │                   │
+              │             Agenda OdontoCRM
+              │                   │
+              │              LWC agendaConsultas
+              │                   │
+              │             AgendaController
+              │                   │
+        ┌─────┴──────┐            │
+        │            │            │
+    Paciente      Dentista     Consulta
+
