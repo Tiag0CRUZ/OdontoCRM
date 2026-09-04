@@ -1,0 +1,83 @@
+<template>
+
+    <lightning-card
+        title="Agenda de Consultas"
+        icon-name="standard:event">
+
+        <template if:true={consultas}>
+
+            <div class="slds-p-around_medium">
+
+                <template
+                    for:each={consultas}
+                    for:item="consulta">
+
+                    <div
+                        key={consulta.id}
+                        class="slds-box slds-m-bottom_small">
+
+                        <p class="slds-text-heading_small slds-m-bottom_small">
+                            <strong>{consulta.nome}</strong>
+                        </p>
+
+                        <p>
+                            <strong>Dentista:</strong>
+                            {consulta.dentista}
+                        </p>
+
+                        <p>
+                            <strong>Paciente:</strong>
+                            {consulta.paciente}
+                        </p>
+
+                        <p>
+                            <strong>Data:</strong>
+                            {consulta.data}
+                        </p>
+
+                        <p>
+                            <strong>Horário:</strong>
+                            {consulta.horario}
+                        </p>
+
+                        <p>
+                            <strong>Tipo:</strong>
+                            {consulta.tipo}
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            {consulta.status}
+                        </p>
+
+                    </div>
+
+                </template>
+
+            </div>
+
+        </template>
+
+        <template if:true={erro}>
+
+            <div class="slds-p-around_medium slds-text-color_error">
+
+                <strong>
+                    Erro ao carregar as consultas.
+                </strong>
+
+            </div>
+
+        </template>
+
+        <template if:false={consultas}>
+
+            <div class="slds-p-around_medium">
+                Nenhuma consulta encontrada.
+            </div>
+
+        </template>
+
+    </lightning-card>
+
+</template>
